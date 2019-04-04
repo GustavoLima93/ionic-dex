@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Dex
+    </ion-title>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+      
+        <ion-col align-self-center>
+            <ion-input  placeholder="Busque um Pokemon"></ion-input>
+        </ion-col>
+        
+      </ion-row>
+ 
+  <ion-virtual-scroll [items]="pokemons">
+    <ion-card *virtualItem="let pokemon">
+      <ion-card-header>
+        <ion-card-title>#{{ pokemon.numeroDex }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <img width="303" height="303" [src]="pokemon?.img">
+      </ion-card-content>
+    </ion-card>
+  </ion-virtual-scroll>
+
+</ion-content>
